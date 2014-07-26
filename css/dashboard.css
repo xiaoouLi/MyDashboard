@@ -1,0 +1,120 @@
+html {
+  margin:0;
+  height: 100%;
+}
+
+body {
+  margin:0;
+  height: 100%;
+}
+
+div#root {
+  background: white url("../image/donut.png");
+  min-width: 980px;
+  height: 100%;;
+}
+
+div#header {
+  width: 100%;
+  height: 56px;
+}
+
+div#logo {
+  background: url("../image/dashboard-logo.png");
+  background-repeat: no-repeat;
+  background-size: 60px 50px;
+  width: 60px;
+  height: 50px;
+  margin-left: 16px;
+  margin-top: 3px;
+  float: left;
+}
+span#header-title {
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  color: black;
+  float: left;
+  text-shadow: 1px 1px 0px rgba(255,255,255, .4);
+  padding-left: 120px;
+  padding-top: 10px;
+}
+
+div#menu {
+  margin-left:10px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: inset 0 1px 5px black, 0 1px 5px white;
+  padding: 10px 14px 10px 10px;
+  /*height: 180px;*/
+  margin-top: 65px;
+}
+
+div.tab-icon {
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+  border:solid 2px #186f8f;
+  border-radius: 15px;
+  background-image: -webkit-linear-gradient(rgba(62,184,229,1),rgba(44,160,202,1));
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: 0px 1px 1px #7fd2f1;
+  color:white;
+}
+
+div.tab-icon:active {
+  width: 100%;
+  height: 30px;
+  border:solid 2px #186f8f;
+  border-radius: 15px;
+  background-image: -webkit-linear-gradient(rgba(44,160,202,1),rgba(62,184,229,1));
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: 0px -1px 1px #7fd2f1;
+  color:white;
+}
+
+div.tab-icon:nth-child(1) {
+/*  border-top: 2px solid black;
+  border-bottom: 2px solid black;*/
+
+}
+
+div.tab-icon + div.tab-icon {
+  /*border-bottom: 2px solid black;*/
+  margin-top: 10px;
+}
+
+div.tab-icon i {
+  font-size: 36px;
+  margin-top: 25px;
+  margin-left:10px;
+  color: white;
+}
+
+div.tab-icon i.active{
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+}
+
+div.tab-icon i:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), inset 0px 2px 5px rgba(0, 0, 0, 0.3), 0 0 28px 6px rgba(255, 174, 0, 0.8);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5d5d5), color-stop(50%, #ffffff), color-stop(50%, #f49e23), color-stop(100%, #e27619));
+  background-image: -webkit-linear-gradient(#d5d5d5, #ffffff 50%, #f49e23 50%, #e27619);
+  background-image: -moz-linear-gradient(#d5d5d5, #ffffff 50%, #f49e23 50%, #e27619);
+  background-image: -o-linear-gradient(#d5d5d5, #ffffff 50%, #f49e23 50%, #e27619);
+  background-image: linear-gradient(#d5d5d5, #ffffff 50%, #f49e23 50%, #e27619);
+}
+
+
+
+
+
+
+
+
