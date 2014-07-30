@@ -27,7 +27,7 @@ define([
 
         root = $('#root');
         // console.log(root);
-        header = new Header({root: root});
+        // header = new Header({root: root});
         container = new Container({root: root});
         menu = new Menu({root: container});
         content = new Content({root: container});
