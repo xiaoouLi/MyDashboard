@@ -16,7 +16,6 @@ define([
       },
 
       render: function(){
-        // this.$el.html(this.templ());
         this.root.append(this.$el);
       },
 
