@@ -9,9 +9,9 @@ body {
 }
 
 div#root {
-  background:  url("../image/front-background.jpg") no-repeat;
+  /*background:  url("../image/front-background.jpg") no-repeat;*/
   position: absolute;
-  background-size: cover;
+  /*background-size: cover;*/
   top: 0;
   left: 0;
   right: 0;
@@ -25,6 +25,32 @@ div#root {
 div#header {
   width: 100%;
   height: 56px;
+}
+
+h1#title {
+  transition:all 0.1s ease-in-out;
+  color: white;
+  left: 0;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  text-align: center;
+  font-size: 3.25em;
+  font-family: Comic Sans MS;
+  font-weight: 100;
+}
+
+h1#title:hover {
+/*  color: white;
+  left: 0;
+  right: 0;
+  top: 50%;*/
+  color: #27ae60;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  position: absolute;
+  text-align: center;
+  font-size: 3.35em;
+  font-weight: 100;
 }
 
 div#logo {
@@ -53,18 +79,29 @@ div#container {
 }
 
 div#menu {
-  float: right;
-  width: 19%;
+  width: 240px;
   height: 100%;
   background-color: #2D2D2D;
   opacity: 1;
+  right: 0;
+  position: fixed;
 }
 
-
+div#content {
+  position: absolute;
+  background:  url("../image/front-background.jpg") no-repeat;
+  right:240px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center bottom !important;
+}
 
 nav#navigator {
   width: inherit;
-  position: absolute;
+  position: fixed;
   top: 50%;
   margin: -208px 0 0 0;
 }
@@ -136,7 +173,10 @@ ul.menu  {
 }
 
 .menu li {
-  transition:all 0.4s ease-in-out;
+  /*transition:all 2s ease-in-out;*/
+  perspective: 800px;
+  perspective-origin: 50% 100px;
+  transition:background-color 0.4s ease-in-out;
   border: 0;
   font: inherit;
   font-size: 100%;
@@ -146,6 +186,16 @@ ul.menu  {
 
 .menu li:hover {
   background-color: #27ae60;
+}
+
+.menu li .tab-icon{
+  transition:all 2.5s ease-in-out;
+  }
+
+.menu li:hover .tab-icon{
+  -webkit-transform:rotateY(2160deg);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transition-timing-function: linear;
 }
 
 .menu li a {
@@ -193,8 +243,8 @@ margin-left: 60px;
 
 footer#social {
   width: inherit;
-  position: absolute;
-  bottom: 0%;
+  position: fixed;
+  bottom: 0;
 }
 
 /*div#social {
