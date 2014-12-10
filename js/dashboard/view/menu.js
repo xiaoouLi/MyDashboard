@@ -10,24 +10,31 @@ define([
       templ: _.template(MenuTemp),
       id: "menu",
 
+      events: {
+        'click .menu-item': 'onMenuClick',
+      },
+
       initialize: function(options){
-        this.root = options.root;
+        this.root = options.rootView;
+        this.router = options.router;
         this.render();
       },
 
       render: function(){
-        this.$el.html(this.templ({menus:this.createMenu()}));
-        this.root.$el.append(this.$el);
+        this.$el.html(this.templ());
+        this.root.append(this.$el);
       },
 
-      createMenu: function(){
-        var menu = [
-        "Money",
-        "Health",
-        "My Painting",
-        "My Songs"
-        ];
-        return menu;
+      onMenuClick: function(evt) {
+        var that = $(evt.currentTarget);
+        var text = $(evt.currentTarget).find('.tab-big-title').text();
+        if(text === 'Index') {
+          window.location.hash = '';
+        } else {
+          window.location.hash = text;
+        }
+
+        return false;
       },
 
       isActive: function(){

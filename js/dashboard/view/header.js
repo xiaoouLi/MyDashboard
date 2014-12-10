@@ -11,7 +11,7 @@ define([
       id: "header",
 
       initialize: function(options){
-        this.root = options.root;
+        this.root = options.rootView;
         this.render();
       },
 

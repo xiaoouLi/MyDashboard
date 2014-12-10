@@ -17,16 +17,54 @@ require.config({
     'text': 'js/third_party/text-2.0.10/text',
     'backbone': 'js/third_party/backbone-1.1.2/backbone',
 		'underscore': 'js/third_party/underscore-1.6.0/underscore',
-		// 'highchart': 'js/third_party/highstock-4.0.3/highchart',
-		// 'highstock': 'js/third_party/highstock-4.0.3/highstock',
-	}
+		'highcharts': 'js/third_party/highstock-4.0.3/highcharts',
+		'highstock': 'js/third_party/highstock-4.0.3/highstock',
+	},
+
+  shim: {
+
+    'underscore': {exports: '_'},
+
+    'backbone': {
+      deps: ['underscore', 'jquery'],
+      exports: 'Backbone'
+    },
+
+    'jquery': {exports: '$'},
+
+    'jquery-ui': {
+      deps: ['jquery'],
+      exports: '$.ui'
+    },
+
+    'jquery-dynatree': {deps:['jquery-ui']},
+
+
+    'datatables': {
+      deps: ['jquery']
+    },
+
+    'highcharts': {deps: ['jquery']},
+    'highstock': {deps: ['jquery']},
+
+  }
+
 });
 
 require([
   'view/console',
   'jquery-ui',
-  // 'highstock'
+  // 'highstock',
+  'highcharts'
 ], function(Console){
   var app = new Console();
+    Highcharts.setOptions({
+    lang: {
+      rangeSelectorZoom: 'Duration'
+    },
+    global: {
+      useUTC: false
+    }
+  });
   app.init();
 });

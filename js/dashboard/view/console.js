@@ -5,7 +5,7 @@ define([
   'backbone',
   'view/menu',
   'view/container',
-  'view/content',
+  'view/tab/index/init',
   'view/tab/slim/init',
   'view/tab/blog/init',
   'view/tab/interests/init',
@@ -14,7 +14,7 @@ define([
     , Backbone
     , Menu
     , Container
-    , Content
+    , IndexTab
     , SlimTab
     , BlogTab
     , InterestsTab
@@ -26,15 +26,17 @@ define([
     Console.prototype = {
       init: function(){
         console.log("login");
-        var root, header, menu, container, content, customerAssetChart,
-            router, slimTab, blogTab, interestsTab;
+        var root, header, menu, container, indexTab, customerAssetChart,
+            router, slimTab, blogTab, interestsTab, options;
 
         root = $('#root');
-        container = new Container({root: root});
-        menu = new Menu({root: container});
-        content = new Content({root: container});
-        router = this.initRouter(menu, slimTab, blogTab, interestsTab);
-
+        options = {rootView: root};
+        menu = new Menu({rootView: root, router: function() {return router;}});
+        indexTab = new IndexTab(options).init();
+        slimTab = new SlimTab(options).init();
+        blogTab = new BlogTab(options).init();
+        interestsTab = new InterestsTab(options).init();
+        router = this.initRouter(menu, indexTab, slimTab, blogTab, interestsTab);
       },
 
       initRouter: function(menu, index, slim, blog, interests) {
@@ -62,7 +64,7 @@ define([
           },
 
           routes: {
-            ''    : 'indexTab',
+            'index'    : 'indexTab',
             'Slim': 'slimTab',
             'Interests': 'interestsTab',
             'Blog': 'blogTab'
@@ -74,38 +76,38 @@ define([
           },
 
           indexTab: function(e) {
-            index.getContainer().enable();
+            index.showContainer();
             slim.getContainer().disable();
             blog.getContainer().disable();
             interests.getContainer().disable();
-            menu.triggerMenuClick(0, 'Slim');
+            // menu.triggerMenuClick(0, 'Slim');
             Backbone.trigger('tab_clicked', 1, 'Pipeline');
           },
 
           slimTab: function(e) {
-            index.getContainer().disable();
+            index.hideContainer();
             slim.getContainer().enable();
             blog.getContainer().disable();
             interests.getContainer().disable();
-            menu.triggerMenuClick(0, 'Slim');
+            // menu.triggerMenuClick(0, 'Slim');
             Backbone.trigger('tab_clicked', 1, 'Pipeline');
           },
 
           blogTab: function(e) {
-            index.getContainer().disable();
+            index.hideContainer();
             slim.getContainer().disable();
             interests.getContainer().enable();
             blog.getContainer().disable();
-            menu.triggerMenuClick(1, 'Blog');
+            // menu.triggerMenuClick(1, 'Blog');
             Backbone.trigger('tab_clicked', 2, 'Snaplex');
           },
 
           interestsTab: function(e) {
-            index.getContainer().disable();
+            index.hideContainer();
             slim.getContainer().disable();
             interests.getContainer().disable();
             blog.getContainer().enable();
-            menu.triggerMenuClick(2, 'Interests');
+            // menu.triggerMenuClick(2, 'Interests');
             Backbone.trigger('tab_clicked', 2, 'Snaplex');
           },
 
