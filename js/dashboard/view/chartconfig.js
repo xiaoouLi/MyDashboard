@@ -36,25 +36,8 @@ define([
         min: 0,
         allowDecimals: false,
         title: {
-          text: 'Exchange rate'
-        },
-        plotLines : [{
-                    value : 0.6738,
-                    color : 'green',
-                    dashStyle : 'shortdash',
-                    width : 2,
-                    label : {
-                        text : 'Last quarter minimum'
-                    }
-                }, {
-                    value : 0.7419,
-                    color : 'red',
-                    dashStyle : 'shortdash',
-                    width : 2,
-                    label : {
-                        text : 'Last quarter maximum'
-                    }
-                }]
+          text: ''
+        }
       },
 
       legend: {
