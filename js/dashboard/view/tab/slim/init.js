@@ -1,11 +1,14 @@
 'user strict';
 
 define ([
-  // 'view/tab/slim/weigthChart',
   'view/tab/slim/weigthchartpanel',
+  'view/tab/slim/workoutpanel',
+  'view/tab/slim/dietpanel',
   'view/container'
   ], function(
     WeightPanel
+    , WorkoutPanel
+    , DietPanel
     , Container
     ) {
 
@@ -15,11 +18,15 @@ define ([
 
     slimTab.prototype = {
       init: function() {
-        var slimContainer, weigthPanel;
+        var slimContainer, weigthPanel, dietPanel, workPanel;
         slimContainer = new Container({root: this.options.rootView});
         weigthPanel = new WeightPanel(this.options);
-        slimContainer.render().addChildView(weigthPanel.render(), 'weigth');
+        workPanel = new WorkoutPanel(this.options);
+        dietPanel = new DietPanel(this.options);
 
+        slimContainer.render().addChildView(weigthPanel.render(), 'weigth')
+                              .addChildView(workPanel.render(), 'workout')
+                              .addChildView(dietPanel.render(), 'diet');
 
 
 

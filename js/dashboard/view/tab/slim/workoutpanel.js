@@ -7,8 +7,8 @@ define([ // will add a model
   ], function(SimplePanel, Config, ChartPanel) {
     var WeigthtChartPanel = SimplePanel.extend(ChartPanel).extend({
 
-      title: 'Weight Trends',
-      id: 'weight',
+      title: 'Workout Records',
+      id: 'workout',
 
       initialize: function(options) {
         var self = this;
@@ -41,9 +41,6 @@ define([ // will add a model
           title: {
             text: 'Weight (Kg)'
           },
-          minorGridLineWidth: 0,
-            gridLineWidth: 0,
-            alternateGridColor: null,
           plotLines : [{
                       value : min,
                       color : 'green',

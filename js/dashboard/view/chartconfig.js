@@ -12,6 +12,7 @@ define([
       exporting: { buttons: { contextButton: { enabled: false}}},
 
       chart: {
+        type:'spline',
         height: 320,
       },
 
@@ -25,6 +26,9 @@ define([
 
       xAxis: {
         type: 'datetime',
+        minorGridLineWidth: 0,
+        gridLineWidth: 0,
+        alternateGridColor: null,
         dateTimeLabelFormats: {
           millisecond: '%H:%M:%S',
           month: '%e. %b',
@@ -34,6 +38,9 @@ define([
 
       yAxis: {
         min: 0,
+        minorGridLineWidth: 0,
+            gridLineWidth: 0,
+            alternateGridColor: null,
         allowDecimals: false,
         title: {
           text: ''
@@ -111,14 +118,20 @@ define([
             enabled: true,
             fillColor: '#FFFFFF',
             lineWidth: 2.5,
-            lineColor: '#79C7F4' // inherit from series
+            lineColor: '#79C7F4', // inherit from series
+            states: {
+              hover: {
+                lineWidth: 5.5,
+                lineColor: '#DA9B66'
+              }
+            }
           },
           shadow: false,
           lineWidth: 3.5,
           lineColor: '#DA9B66',
           states: {
             hover: {
-              lineWidth: 4.5
+              lineWidth: 3.5
             }
           }
         },
@@ -134,7 +147,7 @@ define([
           dataLabels: {
               enabled: true
           },
-          enableMouseTracking: false,
+          enableMouseTracking: true,
 
           // events: {
           //   legendItemClick: function () {

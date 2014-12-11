@@ -267,10 +267,11 @@ div#tab5 {
 }
 
 ul.menu  {
-  padding-left: 0px;
   border: none;
   list-style: none;
   text-align: left;
+  width: 260px;
+  margin-left: -20px;
 }
 
 .menu li {
@@ -285,8 +286,18 @@ ul.menu  {
   padding: 5px 10px 0 10px;
 }
 
-.menu li:hover {
-  background-color: #27ae60;
+.menu li:hover  {
+  background-color: #434343;
+  border-left: solid 5px #DA9B66;
+}
+
+.menu li.active  {
+  background-color: #434343;
+  border-left: solid 5px #DA9B66;
+}
+
+.menu li.active .tab-description{
+  color: white;
 }
 
 .menu li .tab-icon{
@@ -386,6 +397,7 @@ li.social + li.social {
 
 .panel {
   background-color: white;
+  margin-bottom: 20px;
 }
 
 .header {

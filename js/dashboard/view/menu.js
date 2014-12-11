@@ -26,8 +26,12 @@ define([
       },
 
       onMenuClick: function(evt) {
-        var that = $(evt.currentTarget);
-        var text = $(evt.currentTarget).find('.tab-big-title').text();
+        var that, text, previous;
+        previous = $('li.active');
+        previous.removeClass('active');
+        that = $(evt.currentTarget);
+        that.addClass('active');
+        text = $(evt.currentTarget).find('.tab-big-title').text();
         if(text === 'Index') {
           window.location.hash = '';
         } else {

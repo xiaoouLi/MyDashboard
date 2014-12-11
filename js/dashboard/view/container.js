@@ -55,8 +55,7 @@ define([
       _addView: function(view, _id) {
         var len = this.panels.length, el;
         this.panels.push(view);
-        el = $('<div/>').append(view.el);
-        if(_id) el.attr('id', _id);
+        el = view.el;
         return el;
       },
       disable: function() {
