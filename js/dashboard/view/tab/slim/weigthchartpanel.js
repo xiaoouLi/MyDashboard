@@ -8,7 +8,6 @@ define([ // will add a model
     var WeigthtChartPanel = SimplePanel.extend(ChartPanel).extend({
 
       title: 'Weigtht Trends',
-      id: 'weight-chart',
 
       initialize: function(options) {
         var self = this;
@@ -17,17 +16,16 @@ define([ // will add a model
       },
 
       render: function() {
-        var options = Config.getConfig('Weight', this.chartXEvents, null, self.legendClickEvent),
+        var self = this, options = Config.getConfig('Weight', this.chartXEvents, null, self.legendClickEvent),
             data = [
 {data:/* Nov 2007 */
 [[1196035200000,24.65],
 [1196121600000,24.97],
-[1196208000000,25.75],
+[1196208000000,35.75],
 [1196294400000,26.33],
 [1196380800000,26.03]], name:'Weight'},
 
 ];
-
         _.extend(options, {
         tooltip: {
           shared: true, // Tooltip texts for series types with ordered data (not pie, scatter, flags etc) will be shown in a single bubble.
@@ -43,7 +41,20 @@ define([ // will add a model
       });
         this.getContainer().highcharts( options);
         this.summaryChart = this.getContainer().highcharts();
+
+        setTimeout(function() {
+          self.resize(true);
+        }, 10);
+
         return this;
+      },
+
+      resize: function(evt){
+        var w = this.$el.width() - 5,
+            h = $('.container:visible').outerHeight() - 590;
+          h = h < 300 ? 300 : h;
+          w = w < 300 ? 300 : w;
+          this.summaryChart.setSize(w, h);
       },
 
     });

@@ -8,7 +8,7 @@ define([
 
   var SimplePanel = Backbone.View.extend({
 
-    __templ: _.template(tmpl),
+    templ: _.template(tmpl),
 
     title: 'Panel',
 
@@ -23,7 +23,7 @@ define([
       if(opts.headless && opts.headless === true) {
         header = false;
       }
-      this.$el.html(this.__templ({header: header}));
+      this.$el.html(this.templ({header: header}));
       this.$header = this.$('.header span').html(this.title).parent();
       this.$container = this.$('div.panel-container');
       this.$container.attr("id",id);

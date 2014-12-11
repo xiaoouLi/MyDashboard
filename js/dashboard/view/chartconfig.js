@@ -12,8 +12,6 @@ define([
       exporting: { buttons: { contextButton: { enabled: false}}},
 
       chart: {
-
-        width: 350,
         height: 320,
       },
 
@@ -38,8 +36,25 @@ define([
         min: 0,
         allowDecimals: false,
         title: {
-          text: ''
-        }
+          text: 'Exchange rate'
+        },
+        plotLines : [{
+                    value : 0.6738,
+                    color : 'green',
+                    dashStyle : 'shortdash',
+                    width : 2,
+                    label : {
+                        text : 'Last quarter minimum'
+                    }
+                }, {
+                    value : 0.7419,
+                    color : 'red',
+                    dashStyle : 'shortdash',
+                    width : 2,
+                    label : {
+                        text : 'Last quarter maximum'
+                    }
+                }]
       },
 
       legend: {
@@ -110,10 +125,14 @@ define([
           },
           turboThreshold: 0,
           marker: {
-            enabled: true
+            enabled: true,
+            fillColor: '#FFFFFF',
+            lineWidth: 2.5,
+            lineColor: '#79C7F4' // inherit from series
           },
           shadow: false,
           lineWidth: 3.5,
+          lineColor: '#DA9B66',
           states: {
             hover: {
               lineWidth: 4.5
@@ -129,6 +148,10 @@ define([
           dataGrouping: {
             enabled: false
           },
+          dataLabels: {
+              enabled: true
+          },
+          enableMouseTracking: false,
 
           // events: {
           //   legendItemClick: function () {

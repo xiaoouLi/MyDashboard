@@ -7,7 +7,7 @@ define([
 
     var Content = Backbone.View.extend({
 
-      id: "content-wrapper",
+      className: "content-wrapper",
 
       initialize: function(options){
         this.root = options.root;

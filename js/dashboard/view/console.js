@@ -64,6 +64,7 @@ define([
           },
 
           routes: {
+            ''    : 'indexTab',
             'index'    : 'indexTab',
             'Slim': 'slimTab',
             'Interests': 'interestsTab',
